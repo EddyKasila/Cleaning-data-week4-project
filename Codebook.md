@@ -1,1 +1,12 @@
-
+ [1] "activitydescription"  "subject"              "tbodyaccmeanx"        "tbodyaccmeany"        "tbodyaccmeanz"        "tbodyaccstdx"        
+ [7] "tbodyaccstdy"         "tbodyaccstdz"         "tgravityaccmeanx"     "tgravityaccmeany"     "tgravityaccmeanz"     "tgravityaccstdx"     
+[13] "tgravityaccstdy"      "tgravityaccstdz"      "tbodyaccjerkmeanx"    "tbodyaccjerkmeany"    "tbodyaccjerkmeanz"    "tbodyaccjerkstdx"    
+[19] "tbodyaccjerkstdy"     "tbodyaccjerkstdz"     "tbodygyromeanx"       "tbodygyromeany"       "tbodygyromeanz"       "tbodygyrostdx"       
+[25] "tbodygyrostdy"        "tbodygyrostdz"        "tbodygyrojerkmeanx"   "tbodygyrojerkmeany"   "tbodygyrojerkmeanz"   "tbodygyrojerkstdx"   
+[31] "tbodygyrojerkstdy"    "tbodygyrojerkstdz"    "tbodyaccmagmean"      "tbodyaccmagstd"       "tgravityaccmagmean"   "tgravityaccmagstd"   
+[37] "tbodyaccjerkmagmean"  "tbodyaccjerkmagstd"   "tbodygyromagmean"     "tbodygyromagstd"      "tbodygyrojerkmagmean" "tbodygyrojerkmagstd" 
+[43] "fbodyaccmeanx"        "fbodyaccmeany"        "fbodyaccmeanz"        "fbodyaccstdx"         "fbodyaccstdy"         "fbodyaccstdz"        
+[49] "fbodyaccjerkmeanx"    "fbodyaccjerkmeany"    "fbodyaccjerkmeanz"    "fbodyaccjerkstdx"     "fbodyaccjerkstdy"     "fbodyaccjerkstdz"    
+[55] "fbodygyromeanx"       "fbodygyromeany"       "fbodygyromeanz"       "fbodygyrostdx"        "fbodygyrostdy"        "fbodygyrostdz"       
+[61] "fbodyaccmagmean"      "fbodyaccmagstd"       "fbodyaccjerkmagmean"  "fbodyaccjerkmagstd"   "fbodygyromagmean"     "fbodygyromagstd"     
+[67] "fbodygyrojerkmagmean" "fbodygyrojerkmagstd" 
