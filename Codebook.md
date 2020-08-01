@@ -1,12 +1,40 @@
- [1] "activitydescription"  "subject"              "tbodyaccmeanx"        "tbodyaccmeany"        "tbodyaccmeanz"        "tbodyaccstdx"        
- [7] "tbodyaccstdy"         "tbodyaccstdz"         "tgravityaccmeanx"     "tgravityaccmeany"     "tgravityaccmeanz"     "tgravityaccstdx"     
-[13] "tgravityaccstdy"      "tgravityaccstdz"      "tbodyaccjerkmeanx"    "tbodyaccjerkmeany"    "tbodyaccjerkmeanz"    "tbodyaccjerkstdx"    
-[19] "tbodyaccjerkstdy"     "tbodyaccjerkstdz"     "tbodygyromeanx"       "tbodygyromeany"       "tbodygyromeanz"       "tbodygyrostdx"       
-[25] "tbodygyrostdy"        "tbodygyrostdz"        "tbodygyrojerkmeanx"   "tbodygyrojerkmeany"   "tbodygyrojerkmeanz"   "tbodygyrojerkstdx"   
-[31] "tbodygyrojerkstdy"    "tbodygyrojerkstdz"    "tbodyaccmagmean"      "tbodyaccmagstd"       "tgravityaccmagmean"   "tgravityaccmagstd"   
-[37] "tbodyaccjerkmagmean"  "tbodyaccjerkmagstd"   "tbodygyromagmean"     "tbodygyromagstd"      "tbodygyrojerkmagmean" "tbodygyrojerkmagstd" 
-[43] "fbodyaccmeanx"        "fbodyaccmeany"        "fbodyaccmeanz"        "fbodyaccstdx"         "fbodyaccstdy"         "fbodyaccstdz"        
-[49] "fbodyaccjerkmeanx"    "fbodyaccjerkmeany"    "fbodyaccjerkmeanz"    "fbodyaccjerkstdx"     "fbodyaccjerkstdy"     "fbodyaccjerkstdz"    
-[55] "fbodygyromeanx"       "fbodygyromeany"       "fbodygyromeanz"       "fbodygyrostdx"        "fbodygyrostdy"        "fbodygyrostdz"       
-[61] "fbodyaccmagmean"      "fbodyaccmagstd"       "fbodyaccjerkmagmean"  "fbodyaccjerkmagstd"   "fbodygyromagmean"     "fbodygyromagstd"     
-[67] "fbodygyrojerkmagmean" "fbodygyrojerkmagstd" 
+The run_analysis.R script cleans and merges data from the UCI HAR Datasets instructed in the course project.
+
+1.	Dataset download
+o	The zipped HAR Dataset is extracted and saved under the UCI HAR Dataset folder inside a created data folder
+
+2.	Assign each data to variables
+o	file_features <- features.txt : 561 rows, 2 columns
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
+o	file_activitylabels <- activity_labels.txt : 6 rows, 2 columns
+List of activities performed when the corresponding measurements were taken and its codes (labels)
+o	file_testsubject <- test/subject_test.txt : 2947 rows, 1 column
+contains test data of 9/30 volunteer test subjects being observed
+o	file_testvariables <- test/X_test.txt : 2947 rows, 561 columns
+contains recorded features test data
+o	file_testactivity<- test/y_test.txt : 2947 rows, 1 columns
+contains test data of activities’code labels
+o	file_trainsubject<- test/subject_train.txt : 7352 rows, 1 column
+contains train data of 21/30 volunteer subjects being observed
+o	file_trainvariables<- test/X_train.txt : 7352 rows, 561 columns
+contains recorded features train data
+o	file_trainactivity<- test/y_train.txt : 7352 rows, 1 columns
+contains train data of activities’code labels
+
+3.	Merging the training and the test sets to create one data set
+o	features <- all the variables from the data collected by the devices
+o	requiredfeatures <- filtered 66 required variables for the mean and standard deviation
+o	testdata <- (10299 rows, 561 columns) is created by merging x_train and x_test using rbind() function
+o	traindata <- (10299 rows, 1 column) is created by merging y_train and y_test using rbind() function
+o	Combined_test_train_data <- (10299 rows, 563 column) is created by merging traindata and testdata using rbind() function
+
+4.	Uses descriptive activity names to name the activities in the data set
+o	described_testactivities <- create descriptive names for activities by merging activitylabels and testactivities
+
+5.	Appropriately labels the data set with descriptive variable names
+o	All variables changed to lowercase.
+o	All BodyBody in column’s name replaced by Body
+
+6.	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
+o	Summarized_grouped_combined_data <- (180 rows, 88 columns) is created by sumarizing combined_test_train_data taking the means of each variable for each activity and each subject, after grouped by subject and activity.
+o	Export summarized_grouped_combined_data into Average_Variable_By_Activity_Subject.txt file.
