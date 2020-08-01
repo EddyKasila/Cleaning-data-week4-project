@@ -1,3 +1,5 @@
+# Getting and Cleaning Data Course Project Codebook
+
 The run_analysis.R script cleans and merges data from the UCI HAR Datasets instructed in the course project.
 
 1.	Dataset download
